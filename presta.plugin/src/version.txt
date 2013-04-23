@@ -1,0 +1,16 @@
+Version 0.3.1
+
+- Hot fix: Backend payment activation DB update
+
+Version 0.3.0
+
+- Billpay data to Presta order confirmation email
+- Fingerprinting for Billpay payments methods 
+
+Version 0.2.0
+
+- First Billpay Presta transaction credit payment module implementation
+
+Version 0.1.0
+
+- First Billpay Presta payment module implementation 

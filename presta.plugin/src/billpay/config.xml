@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>billpay</name>
+	<displayName><![CDATA[Billpay invoice]]></displayName>
+	<version><![CDATA[0.2.0]]></version>
+	<description><![CDATA[Billpay is the payment for the successful e-commerce expert. With Billpay online merchants are able to offer their customers payment by invoice without any risk.&lt;br&gt;&lt;span style=&quot;color: #CB1C00;&quot;&gt;&lt;sup&gt;*&lt;/sup&gt;&amp;nbsp;Do not delete this module!&lt;/span&gt;]]></description>
+	<author><![CDATA[Billpay GmbH]]></author>
+	<tab><![CDATA[payments_gateways]]></tab>
+	<confirmUninstall>Are you sure you want to uninstal this module?</confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>

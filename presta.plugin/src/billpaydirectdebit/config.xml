@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>billpaydirectdebit</name>
+	<displayName><![CDATA[Billpay direct debit]]></displayName>
+	<version><![CDATA[0.2.0]]></version>
+	<description><![CDATA[Billpay is the payment for the successful e-commerce expert. With Billpay online merchants are able to offer their customers payment via direct debit - and all without any risk.]]></description>
+	<author><![CDATA[Billpay GmbH]]></author>
+	<tab><![CDATA[payments_gateways]]></tab>
+	<confirmUninstall>Are you sure you want to uninstal this module?</confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries>de</limited_countries>
+</module>

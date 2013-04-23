@@ -1,0 +1,82 @@
+<project name="billpay_presta_plugin" default="" basedir=".">
+    
+    <description>Billpay Presta Plugin</description>
+    
+    <property file="build.properties"/>
+    
+    <target name="_init">
+       <echo>Init bundle for Billpay Presta Plugin</echo>
+       <mkdir dir="${dist.dir}"/>
+    </target>
+    
+    <target name="_make-bundle_billpay" depends="_init">
+        
+        <mkdir dir="${billpay.dir}"/>
+        
+        <!-- copy the base code -->
+        <copy todir="${billpay.dir}">
+            <fileset dir="${src.billpay.dir}">
+                <exclude name=".CVS/"/>
+                <exclude name=".svn/"/>
+            </fileset>
+        </copy>
+        
+    </target>
+
+    <target name="_make-bundle_billpay_direct_debit" depends="_init">
+        
+        <mkdir dir="${billpay_direct_debit.dir}"/>
+        
+        <!-- copy the base code -->
+        <copy todir="${billpay_direct_debit.dir}">
+            <fileset dir="${src.billpay_direct_debit.dir}">
+                <exclude name=".CVS/"/>
+                <exclude name=".svn/"/>
+            </fileset>
+        </copy>
+        
+    </target>
+
+    <target name="_make-bundle_billpay_transaction_credit" depends="_init">
+        
+        <mkdir dir="${billpay_transaction_credit.dir}"/>
+        
+        <!-- copy the base code -->
+        <copy todir="${billpay_transaction_credit.dir}">
+            <fileset dir="${src.billpay_transaction_credit.dir}">
+                <exclude name=".CVS/"/>
+                <exclude name=".svn/"/>
+            </fileset>
+        </copy>
+        
+    </target>
+    
+    <target name="make-zip-billpay-presta-0-3-1">
+        <antcall target="clean"></antcall>      
+
+        <echo>Make zip for shop version ${dist.release.version}</echo>
+        
+        <copy file="${src.dir}/version.txt" todir="${dist.dir}/"/>
+        <copy file="${src.dir}/Presta-Billpay-Installation_v1_4.pdf" todir="${dist.dir}/"/>
+        
+        <antcall target="_make-bundle_billpay"></antcall>
+        <antcall target="_make-bundle_billpay_direct_debit"></antcall>
+        <antcall target="_make-bundle_billpay_transaction_credit"></antcall>
+        
+        <zip destfile="${dist.dir}/presta_billpay_${dist.release.version}.zip">
+            <fileset dir="${dist.dir}">
+                <include name="version.txt"/>
+                <include name="Presta-Billpay-Installation_v1_4.pdf"/>
+                
+                <include name="billpay/**"/>
+                <include name="billpaydirectdebit/**"/>
+		<include name="billpaytransactioncredit/**"/>
+            </fileset>
+        </zip>
+    </target>
+    
+    <target name="clean">
+        <delete dir="${dist.dir}" />
+    </target>
+    
+</project>
